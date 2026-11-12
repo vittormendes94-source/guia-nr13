@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Guia de Equipamentos NR-13">
+<meta property="og:description" content="Os equipamentos que o Eng. Vitor Mendes usa nas inspeções NR-13: o que é, para que serve e onde encontrar.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1d3442">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Guia de Equipamentos NR-13</title>
+<meta name="description" content="Guia de apoio com os equipamentos, peças e instrumentos usados em inspeções NR-13, explicados por Vitor Mendes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: placa de identificação de vaso no topo, faixa de kits, fichas de produto com "o que é / para que serve", rodapé com aviso legal */
+:root{
+  --bg:#eef1f2; --panel:#ffffff; --ink:#152129; --muted:#56646d; --line:#d3dade;
+  --steel:#1d3442; --steel-ink:#eef3f5; --accent:#0d5d7d; --accent-ink:#ffffff; --brass:#a8741a; --brass-bg:#f6ecd8;
+  --ok:#1f7a45; --ok-bg:#e3f2e8; --warn:#8f5600; --warn-bg:#fbefd9; --tag:#e5edf1;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f161b; --panel:#172129; --ink:#e4ebef; --muted:#9caab3; --line:#2a3842;
+  --steel:#0b1217; --steel-ink:#e4ebef; --accent:#55b6dc; --accent-ink:#0a1419; --brass:#e0aa4c; --brass-bg:#33270f;
+  --ok:#72d49d; --ok-bg:#15301f; --warn:#f0b65a; --warn-bg:#382a12; --tag:#203039; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f161b; --panel:#172129; --ink:#e4ebef; --muted:#9caab3; --line:#2a3842;
+  --steel:#0b1217; --steel-ink:#e4ebef; --accent:#55b6dc; --accent-ink:#0a1419; --brass:#e0aa4c; --brass-bg:#33270f;
+  --ok:#72d49d; --ok-bg:#15301f; --warn:#f0b65a; --warn-bg:#382a12; --tag:#203039; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:.01em}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.label{font-family:var(--f-display);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:13px}
+
+/* placa */
+.hero{background:var(--steel);color:var(--steel-ink);padding-block:40px 34px}
+.plate{max-width:1120px;margin:0 auto;border:2px solid color-mix(in srgb,var(--steel-ink) 35%,transparent);border-radius:10px;padding:26px 24px;position:relative;display:grid;gap:16px}
+.plate::before,.plate::after{content:"";position:absolute;top:12px;width:9px;height:9px;border-radius:50%;background:color-mix(in srgb,var(--steel-ink) 45%,transparent)}
+.plate::before{left:12px}.plate::after{right:12px}
+.plate .label{color:var(--brass)}
+.plate h1{font-size:clamp(40px,8vw,76px);font-weight:800;line-height:.95;text-transform:uppercase}
+.plate .sub{max-width:62ch;font-size:17px;opacity:.88}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:color-mix(in srgb,var(--steel-ink) 22%,transparent);border-radius:6px;overflow:hidden;margin-top:6px}
+.specs div{background:var(--steel);padding:10px 14px;display:grid;gap:2px}
+.specs span{font-family:var(--f-display);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.specs b{font-family:var(--f-mono);font-weight:500;font-size:14px}
+.publi{display:inline-block;justify-self:start;font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:var(--brass);color:var(--steel);padding:3px 10px;border-radius:3px}
+
+nav.kits{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+nav.kits .inner{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:thin}
+nav.kits a{flex:0 0 auto;font-family:var(--f-display);font-weight:600;font-size:15px;text-decoration:none;color:var(--ink);padding:6px 12px;border-radius:4px;border:1px solid var(--line);white-space:nowrap}
+nav.kits a:hover{border-color:var(--accent);color:var(--accent)}
+
+main{padding-block:34px 56px}
+main .inner{display:grid;gap:48px}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.how div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:6px}
+.how b{font-family:var(--f-display);font-size:30px;line-height:1;color:var(--accent)}
+.how h3{font-size:19px}
+.how p{color:var(--muted);font-size:15px}
+
+.kit{display:grid;gap:18px;scroll-margin-top:70px}
+.kit-head{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:end;border-bottom:3px solid var(--ink);padding-bottom:12px}
+.kit-num{grid-row:span 2;font-family:var(--f-display);font-weight:800;font-size:64px;line-height:.85;color:var(--accent)}
+.kit-head h2{font-size:clamp(26px,4vw,36px);font-weight:700;line-height:1.05}
+.kit-head .label{color:var(--muted);font-size:12.5px}
+.kit-intro{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between}
+.kit-intro p{max-width:68ch;color:var(--muted)}
+.cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:.02em;text-decoration:none;background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:5px}
+.cta:hover{filter:brightness(1.08)}
+.cta.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent);font-size:15px;padding:7px 14px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+@media (max-width:400px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.card.extra{border-style:dashed}
+.card h3{font-size:20px;font-weight:600;line-height:1.15}
+.card .brand{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.b{font-family:var(--f-display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;background:var(--tag);color:var(--ink)}
+.b.ja{background:var(--ok-bg);color:var(--ok)} .b.campo{background:var(--brass-bg);color:var(--brass)} .b.extra{background:var(--tag);color:var(--muted)}
+.qa{display:grid;gap:8px;font-size:15px}
+.qa p{display:grid;gap:1px}
+.qa i{font-style:normal;font-family:var(--f-display);font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.care{font-size:14px;background:var(--warn-bg);border-radius:5px;padding:8px 10px}
+.care b{color:var(--warn);font-weight:600}
+.pick{font-size:14px;background:var(--brass-bg);border-radius:5px;padding:8px 10px}
+.pick b{color:var(--brass);font-weight:600}
+.foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px}
+.ref{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ref b{font-family:var(--f-display);font-size:19px;color:var(--ink);font-weight:700}
+
+.soft{background:var(--steel);color:var(--steel-ink);border-radius:10px;padding:26px 24px;display:grid;gap:10px}
+.soft .label{color:var(--brass)}
+.soft h2{font-size:clamp(26px,4vw,34px)}
+.soft p{max-width:64ch;opacity:.9}
+
+.orient{display:grid;gap:14px;scroll-margin-top:70px}
+.orient h2{font-size:clamp(24px,3.6vw,32px)}
+.orient-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.o-box{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.o-box.warn{border-top-color:var(--warn)}
+.o-box h3{font-size:19px}
+.o-box ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+.cta.go{font-size:16px;padding:9px 16px}
+footer{background:var(--panel);border-top:1px solid var(--line);padding-block:26px 34px}
+footer .inner{display:grid;gap:12px;font-size:14px;color:var(--muted);max-width:820px}
+footer strong{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+.topbar{background:var(--steel);color:var(--steel-ink);padding-block:12px}
+.topbar .inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.topbar b{font-family:var(--f-display);font-size:20px;letter-spacing:.02em;text-transform:uppercase}
+.topbar .publi{font-size:11.5px}
+.back{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-display);font-weight:700;font-size:16px;text-decoration:none;color:var(--accent);padding:4px 0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+@media (max-width:400px){.tiles{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;min-width:0;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.tile:hover,.tile:focus-visible{border-color:var(--accent);transform:translateY(-2px)}
+.tile .th{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:end}
+.tile .tn{grid-row:span 2;font-family:var(--f-display);font-weight:800;font-size:44px;line-height:.85;color:var(--accent)}
+.tile .tm{font-family:var(--f-display);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tile h2{font-size:22px;line-height:1.05}
+.tile ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.tile li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.tile li span{min-width:0}
+.tile li em{font-style:normal;font-family:var(--f-display);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;align-self:center}
+.tile .go{margin-top:auto;padding-top:4px;font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--accent)}
+.tile.o{border-top:4px solid var(--warn)}
+.tile.o p{font-size:14.5px;color:var(--muted)}
+.tile.sw{background:var(--steel);color:var(--steel-ink);border-color:var(--steel)}
+.tile.sw .tm,.tile.sw .go,.tile.sw .tn{color:var(--brass)} .tile.sw p{font-size:14.5px;opacity:.85}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}
+.pager a{font-family:var(--f-display);font-weight:600;font-size:16px;text-decoration:none;color:var(--accent)}
+.card.hl{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+nav.kits a[aria-current="page"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+</style>
+</head><body>
+
+<div id="v-home">
+<header class="hero gut">
+  <div class="plate">
+    <span class="label">Material de apoio · Vitor Mendes · Cerrado Mechanic Engenharia</span>
+    <h1>Guia de Equipamentos NR-13</h1>
+    <p class="sub">Os equipamentos, peças e instrumentos que eu uso nas inspeções de compressores, caldeiras e vasos de pressão, separados em 7 grupos. Toque em um grupo para ver o que é cada item, para que serve, e abrir o produto.</p>
+    <p class="sub">Não é uma loja: eu não vendo nenhum destes itens. A compra é feita direto no Mercado Livre ou no AliExpress.</p>
+    <span class="publi">Contém links de afiliado</span>
+  </div>
+</header>
+<main class="gut"><div class="inner">
+  <div class="tiles" id="tiles"></div>
+</div></main>
+</div>
+
+<div id="v-page" hidden>
+<div class="topbar gut"><div class="inner"><b>Guia de Equipamentos NR-13</b><span class="publi">Contém links de afiliado</span></div></div>
+<nav class="kits gut" aria-label="Grupos"><div class="inner" id="nav"></div></nav>
+<main class="gut"><div class="inner" id="page"></div></main>
+</div>
+
+<template id="t-orient">
+<section class="orient" aria-labelledby="or-h">
+    <h2 id="or-h">Orientações · leia antes de usar o guia</h2>
+    <div class="orient-grid">
+      <div class="o-box"><h3>O que eu faço</h3>
+        <ul>
+          <li>Mostro os equipamentos que eu uso e indico onde encontrar opções mais acessíveis.</li>
+          <li>O selo <span class="b campo">Uso em campo</span> marca o que eu uso nas minhas inspeções, e <span class="b ja">Já comprei</span> o que comprei nesses anúncios. Só a opção econômica de medidor ultrassônico eu não uso: está ali como alternativa mais barata.</li>
+          <li>Explico o que é cada item, para que serve e o que conferir.</li>
+        </ul></div>
+      <div class="o-box warn"><h3>O que não é responsabilidade minha</h3>
+        <ul>
+          <li>Eu não vendo, não recebo pagamento e não participo da compra.</li>
+          <li>Pagamento, entrega, atrasos, trocas, devoluções, garantia e atendimento são do vendedor e da plataforma, pelas regras de cada marketplace.</li>
+          <li>Não respondo por golpes, fraudes, anúncios alterados ou produtos diferentes do anunciado.</li>
+          <li>A indicação não é avaliação técnica nem certificação. A escolha e a aplicação do equipamento são decisão de quem compra.</li>
+        </ul></div>
+      <div class="o-box"><h3>Como se proteger</h3>
+        <ul>
+          <li>Pague só dentro do site ou app oficial: <b>mercadolivre.com.br</b> ou <b>aliexpress.com</b>.</li>
+          <li>Nunca pague por Pix, boleto ou transferência fora da plataforma, nem por WhatsApp.</li>
+          <li>Eu nunca peço pagamento, senha ou dados seus. Desconfie de qualquer mensagem em meu nome pedindo isso.</li>
+          <li>Confira a reputação do vendedor, o prazo e a garantia antes de fechar.</li>
+        </ul></div>
+      <div class="o-box"><h3>Como os botões funcionam</h3>
+        <ul>
+          <li><b>Mercado Livre:</b> abre a página de indicação com o produto. Toque em <b>Ir para produto</b> e compre normalmente.</li>
+          <li><b>AliExpress:</b> abre direto no produto (no celular, no app). Onde houver aviso <b>Ao comprar</b>, selecione a opção indicada.</li>
+          <li>Alguns links são de afiliado: posso receber uma comissão da plataforma, sem custo extra para você.</li>
+        </ul></div>
+    </div>
+  </section>
+  </template>
+<template id="t-soft">
+  <section class="soft" aria-labelledby="sw">
+    <span class="label">Ferramenta própria</span>
+    <h2 id="sw">Software que uso com o MT180</h2>
+    <p>Nas inspeções, uso com o MITECH MT180 um software que eu mesmo desenvolvi. Ele não está em nenhum marketplace.</p>
+    <p>Tem interesse? Pergunte ao Vitor na mentoria.</p>
+  </section>
+</template>
+
+<footer class="gut"><div class="inner">
+  <p><strong>Aviso.</strong> Os produtos são comercializados por terceiros. Não realizamos a venda, entrega ou garantia comercial própria dos itens anunciados. Alguns links são remunerados por comissão de afiliado. Antes da compra, confira as especificações, a compatibilidade técnica, as condições do vendedor e as garantias aplicáveis. A indicação não substitui avaliação técnica profissional.</p>
+  <p>A presença de um produto neste guia não é certificação de conformidade técnica. Preço, estoque e condições são sempre os do anúncio no momento da compra. Compras no AliExpress podem ter imposto de importação somado no checkout.</p>
+  <p>PDFs de cada grupo para baixar: <a href="https://drive.google.com/drive/folders/1jS7Gm0UvvNtQv9bl227q7DjLogvltB63" target="_blank" rel="noopener">pasta no Google Drive</a>.</p>
+  <p>© Cerrado Mechanic Engenharia · Vitor Mendes</p>
+</div></footer>
+
+<script>
+const KITS=[
+{n:"01",id:"compressores",t:"Reposição para Compressores",mk:"Mercado Livre",list:"https://meli.la/2iCxV6R",d:"Válvulas de segurança e manômetros que eu já comprei para reposição em compressores de ar. Faixas e anúncios diferentes não são intercambiáveis.",
+it:[
+["Válvula de segurança 175 psi","Lubefer · 1/4\" NPT","Válvula com mola, em latão, que abre sozinha quando a pressão passa de 175 psi. No anúncio aparecem as lojas que vendem; escolha pela reputação e pelo preço.","Proteger o reservatório do compressor contra sobrepressão.","37,48",["ja","campo"],"A pressão de ajuste deve ser compatível com a PMTA do reservatório.","https://meli.la/2DR5ZJF"],
+["Manômetro 0–300 psi vertical","Ø 50 mm · 1/4\" inferior","Manômetro analógico de tubo Bourdon.","Indicar a pressão do reservatório do compressor.","30,90",["ja","campo"],"Sem certificado de calibração.","https://meli.la/24QuZfG"],
+["Manômetro 0–200 psi vertical","Steels · Ø 50 mm · 1/4\" NPT","Manômetro analógico para faixas menores.","Reposição em compressores que trabalham abaixo de 200 psi.","26,09",["ja","campo"],"Não substitua o de 300 psi sem conferir a pressão de trabalho.","https://meli.la/1MHeGbZ"],
+["Manômetro 300 psi 60 mm","Bolonha · caixa metálica","Manômetro analógico de 60 mm.","Reposição em compressores com relógio de 60 mm.","30,41",["ja","campo"],"Sem certificado de calibração.","https://meli.la/2WAZsqs"]]},
+{n:"02",id:"caldeiras",t:"Reposição para Caldeiras",mk:"Mercado Livre",list:"https://meli.la/18uikK6",d:"Peças de reposição para caldeiras. Instale só depois de verificar pressão, temperatura e compatibilidade com o seu equipamento.",
+it:[
+["Vidro de nível 5/8\" × 300 mm","Borossilicato · com o-ring","Tubo de vidro do indicador de nível.","Substituir o vidro trincado, embaçado ou vazando.","48,50",["ja","campo"],"Confira pressão e temperatura do vidro e o encaixe no corpo do indicador.","https://meli.la/1Ndz9Uu"],
+["Manômetro para caldeira com sifão","Ø 150 mm · 1/2\" · sifão em latão","Manômetro com tubo sifão (“rabo de porco”).","Indicar a pressão de vapor sem expor o instrumento ao vapor quente.","514,95",["ja","campo"],"Confira no anúncio a faixa (kgf/cm²), a posição da conexão e a temperatura.","https://meli.la/2iWuZDE"]]},
+{n:"03",id:"documentacao",t:"Documentação NR-13",mk:"Mercado Livre",list:"https://meli.la/2nd43sQ",d:"Material para organizar registros, desde que atenda aos requisitos aplicáveis. O formato do livro não é exigência da NR-13.",
+it:[
+["Livro ata capa dura · pacote com 10","São Domingos · 50 folhas · 20 × 30 cm","Livro pautado, costurado, capa dura.","Registrar ocorrências e inspeções de forma organizada.","107,00",["ja","campo"],"","https://meli.la/24bdpcc"]]},
+{n:"04",id:"ferramentas",t:"Ferramentas do Engenheiro",mk:"Mercado Livre",list:"https://meli.la/2MGPQGn",d:"Ferramentas de apoio para inspeção e manutenção em campo.",
+it:[
+["Chave grifo 18\"","MTX · 450 mm","Chave de tubo com mordentes dentados.","Apertar e soltar tubos, niples e conexões roscadas.","76,80",["ja","campo"],"","https://meli.la/2uddu13"],
+["Chave inglesa 18\"","EVOFIX · 450 mm","Chave de boca lisa ajustável.","Apertar porcas e sextavados sem marcar a peça.","111,90",["ja","campo"],"","https://meli.la/1NBqZr1"],
+["Jogo de ferramentas 108 peças","Dexter · cromo-vanádio","Maleta com soquetes, chaves e acessórios.","Desmontagens e manutenção em campo.","727,00",["ja","campo"],"","https://meli.la/2ZWgZSw"],
+["Parafusadeira de impacto 20 V","Vonder PFV238i · 2 baterias","Parafusadeira/furadeira a bateria.","Furar e fixar sem depender de tomada.","272,57",["ja","campo"],"","https://meli.la/2HR5UYe"],
+["Paquímetro digital 150 mm","NYBC","Paquímetro de leitura digital.","Conferência dimensional rápida de diâmetros e roscas.","57,90",["campo"],"Sem certificado de calibração: não serve como medição rastreável sem calibrar.","https://meli.la/1dArifq"],
+["Lanterna LED recarregável","Popsy · USB-C · zoom","Lanterna LED com zoom.","Iluminar casa de máquinas, interior de equipamentos e plaquetas.","59,90",["campo"],"","https://meli.la/2ba3ogS"],
+["Trena 10 m com trava","Fita metálica 22 mm","Trena de bolso.","Medir dimensões gerais e distâncias de instalação.","24,81",["campo"],"","https://meli.la/2iANtR4"],
+["Bolsa organizadora 14 bolsos","Livingbasics · Oxford 1680D","Bolsa de lona reforçada.","Levar ferramentas e instrumentos organizados para o campo.","149,31",["campo"],"","https://meli.la/1fnsz1T"]]},
+{n:"05",id:"psv",t:"Ensaios e Testes de PSV",mk:"Mercado Livre",list:"https://meli.la/2wZGGLj",d:"Itens que uso na bancada com nitrogênio. Nenhum conjunto serve para todo ensaio: confira pressões, conexões, documentação e segurança.",
+it:[
+["Regulador de nitrogênio","MONWO · alta 4500 / baixa 1000 psi","Regulador de estágio simples com dois manômetros.","Controlar a pressão do cilindro de N₂ para pressurizar a PSV.","295,00",["ja","campo"],"Saída até 1000 psi (≈ 69 bar): não atende válvulas ajustadas acima disso. Confira a rosca de entrada com o cilindro.","https://meli.la/14DtG98"],
+["Cilindro de nitrogênio 7 L","MAT · aço sem costura · ISO 9809-1","Cilindro para gás comprimido, enviado vazio.","Fonte de nitrogênio para o ensaio de abertura da PSV.","888,72",["ja","campo"],"Enchimento em distribuidor. Transporte, fixação e requalificação periódica são obrigatórios.","https://meli.la/2uG3DZT"],
+["Lacre âncora com arame · 500 un.","Beta · numerado · 30 cm","Lacre plástico numerado com arame.","Lacrar a PSV após o ajuste, mostrando se alguém mexeu na regulagem.","400,00",["campo"],"A cor amarela está indisponível; a lista traz a vermelha.","https://meli.la/1rV5Pva"]]},
+{n:"06",id:"ultrassom",t:"Medição Ultrassônica",mk:"AliExpress",list:null,d:"Medição de espessura de parede metálica por ultrassom. Confira compatibilidade das sondas, materiais, limites de temperatura e documentação metrológica.",
+it:[
+["MITECH MT180","Modos P-E e E-E","Medidor ultrassônico de espessura. É o que eu uso nas minhas inspeções.","Medir a espessura remanescente de vasos, tubulações e tanques, inclusive através da pintura no modo E-E.","1.871,49",["campo"],"","https://s.click.aliexpress.com/e/_c3me0GIf","No anúncio, selecione a opção “MT180”."],
+["Sonda P5EE","5 MHz · Ø 10 mm","Transdutor ultrassônico de pulso estreito.","Medição em modo eco-eco, conforme o anúncio.","529,99",["campo"],"Confirme a compatibilidade com o seu medidor.","https://s.click.aliexpress.com/e/_c4oJqFZt"],
+["Bloco padrão escalonado","Aço carbono · 2,5 a 25 mm","Bloco com 6 degraus de espessura conhecida.","Verificar o medidor antes de medir em campo.","298,99",["campo"],"O anúncio não informa certificado nem rastreabilidade metrológica.","https://s.click.aliexpress.com/e/_c4CzMdcJ"],
+["Medidor WT100A · opção econômica","WINTACT WT100A","Medidor ultrassônico de espessura de entrada. Este eu não uso: é uma alternativa mais barata.","Opção mais barata para quem está começando a medir espessura.","471,35",[],"Confira no anúncio a faixa de medição e a sonda incluída.","https://s.click.aliexpress.com/e/_c4BX4Tzh"],
+["Sonda HT5 · extra","Para medidores Mitech","Transdutor para superfícies quentes.","Medir com o equipamento em operação, onde a sonda padrão não aguenta.","426,99",["campo","extra"],"Confirme a faixa de temperatura e a compatibilidade.","https://pt.aliexpress.com/item/1005006221617209.html",null,1],
+["Sonda N07 · extra","Para medidores Mitech","Sonda de medição para medidores Mitech.","Reposição ou alternativa para geometrias específicas.","304,69",["campo","extra"],"Confirme a frequência e a compatibilidade.","https://pt.aliexpress.com/item/1005006512942702.html",null,1]]},
+{n:"07",id:"instrumentacao",t:"Instrumentação Profissional",mk:"AliExpress",list:null,d:"Instrumentos para inspeções e ensaios. Confira conexão, documentação metrológica, faixa útil e requisitos aplicáveis.",
+it:[
+["Manômetro digital Fande DR3710 · 0–40 MPa","Inox · 0,1% FE (anúncio)","Manômetro digital com retroiluminação e registro de pico.","Ler a pressão de abertura da PSV e acompanhar testes de pressão.","499,99",["campo"],"Sem certificado de calibração informado.","https://s.click.aliexpress.com/e/_c4KhGwM3","Em “Pressure Range”, selecione 0-40Mpa. Em “Color”, escolha a rosca (ex.: NPT1-4, G1-2, M20-1.5). Cuidado: existe também 0-4Mpa."],
+["Manômetro digital Fande DR3710 · 0–60 MPa","Inox · 0,1% FE (anúncio)","O mesmo manômetro, em faixa maior.","Ensaios de PSV e testes em pressões mais altas.","543,70",["campo"],"Sem certificado de calibração informado.","https://s.click.aliexpress.com/e/_c4KhGwM3","Em “Pressure Range”, selecione 0-60Mpa e, em “Color”, a rosca."],
+["Câmera termográfica MILESEEY TR20 Pro","320 × 240 · 50 Hz · vídeo","Câmera térmica portátil.","Achar pontos quentes, isolamento falho e vazamentos em caldeiras, painéis e linhas de vapor.","1.691,03",["ja","campo"],"","https://s.click.aliexpress.com/e/_c3U0BYER","No anúncio, selecione a opção “TR20 PRO”."]]}
+];
+const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const BADGE={ja:["Já comprei","ja"],campo:["Uso em campo","campo"],extra:["Extra · opcional","extra"]};
+const short=n=>n.replace(/ · (extra|opção econômica)$/,"");
+document.getElementById("tiles").innerHTML=
+ `<a class="tile o" href="#orientacoes"><div class="th"><span class="tn">!</span><span class="tm">Leia primeiro</span><h2>Orientações</h2></div><p>O que eu faço, o que não é responsabilidade minha, como se proteger de golpes e como os botões funcionam.</p><span class="go">Ler orientações →</span></a>`+
+ KITS.map(k=>`<a class="tile" href="#${k.id}"><div class="th"><span class="tn">${k.n}</span><span class="tm">${k.mk} · ${k.it.length} ${k.it.length>1?"itens":"item"}</span><h2>${esc(k.t)}</h2></div><ul>${k.it.map(i=>`<li><span>${esc(short(i[0]))}</span>${i[5].includes("extra")?"<em>Extra</em>":(i[5].includes("campo")?"":"<em>Alternativa</em>")}</li>`).join("")}</ul><span class="go">Abrir grupo →</span></a>`).join("")+
+ `<a class="tile sw" href="#software"><div class="th"><span class="tn">+</span><span class="tm">Ferramenta própria</span><h2>Software para o MT180</h2></div><p>O software que eu desenvolvi e uso com o meu medidor ultrassônico.</p><span class="go">Saiba mais →</span></a>`;
+document.getElementById("nav").innerHTML=`<a href="#inicio">← Início</a><a href="#orientacoes" data-k="orientacoes">Orientações</a>`+KITS.map(k=>`<a href="#${k.id}" data-k="${k.id}">${k.n} · ${esc(k.t)}</a>`).join("")+`<a href="#software" data-k="software">Software</a>`;
+function card(k,i,idx){
+  const [nome,brand,oque,uso,preco,bs,care,link,pick,nc]=i;
+  const ml=/meli\.la/.test(link||"");
+  const btn=link?`<a class="cta go" href="${esc(link)}" target="_blank" rel="noopener sponsored">Abrir o produto</a>`:"";
+  const where=ml?"Mercado Livre · toque em “Ir para produto”":(nc?"AliExpress · link sem comissão":"AliExpress · abre direto no produto");
+  return `<article class="card${bs.includes("extra")?" extra":""}">
+    <div class="badges">${bs.length?bs.map(b=>`<span class="b ${BADGE[b][1]}">${BADGE[b][0]}</span>`).join(""):`<span class="b">Alternativa · não uso</span>`}</div>
+    <div><h3>${esc(nome)}</h3><p class="brand">${esc(brand)}</p></div>
+    <div class="qa"><p><i>O que é</i>${esc(oque)}</p><p><i>Para que serve</i>${esc(uso)}</p></div>
+    ${pick?`<p class="pick"><b>Ao comprar:</b> ${esc(pick)}</p>`:""}
+    ${care?`<p class="care"><b>Atenção:</b> ${esc(care)}</p>`:""}
+    ${btn?`<div class="foot"><p class="ref">${where}</p>${btn}</div>`:""}
+  </article>`;
+}
+const ORDER=["orientacoes",...KITS.map(k=>k.id),"software"];
+const LABEL=id=>id==="orientacoes"?"Orientações":id==="software"?"Software MT180":(k=>k.n+" · "+k.t)(KITS.find(k=>k.id===id));
+function show(){
+  const h=location.hash.slice(1);
+  const home=document.getElementById("v-home"),pg=document.getElementById("v-page"),page=document.getElementById("page");
+  const k=KITS.find(x=>x.id===h);
+  if(!k&&h!=="orientacoes"&&h!=="software"){home.hidden=false;pg.hidden=true;window.scrollTo(0,0);return;}
+  let html=`<a class="back" href="#inicio">← Todos os grupos</a>`;
+  if(k){
+    html+=`<section class="kit" aria-labelledby="h-${k.id}">
+      <div class="kit-head"><span class="kit-num">${k.n}</span><span class="label">${k.mk}</span><h2 id="h-${k.id}">${esc(k.t)}</h2></div>
+      <div class="kit-intro"><p>${esc(k.d)}</p>${k.list?`<a class="cta ghost" href="${esc(k.list)}" target="_blank" rel="noopener sponsored">Ver o grupo inteiro no Mercado Livre</a>`:""}</div>
+      <div class="grid">${k.it.map((x,j)=>card(k,x,j)).join("")}</div></section>`;
+  } else html+=document.getElementById(h==="orientacoes"?"t-orient":"t-soft").innerHTML;
+  const i=ORDER.indexOf(h),prev=ORDER[i-1],next=ORDER[i+1];
+  html+=`<div class="pager">${prev?`<a href="#${prev}">← ${esc(LABEL(prev))}</a>`:`<a href="#inicio">← Início</a>`}${next?`<a href="#${next}">${esc(LABEL(next))} →</a>`:`<a href="#inicio">Início →</a>`}</div>`;
+  page.innerHTML=html;
+  document.querySelectorAll("#nav a").forEach(a=>{const on=a.dataset.k===h;a.toggleAttribute("aria-current",on);if(on){a.setAttribute("aria-current","page");try{a.scrollIntoView({block:"nearest",inline:"center"})}catch(e){}}});
+  home.hidden=true;pg.hidden=false;window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",show);show();
+</script>
+</body></html>
