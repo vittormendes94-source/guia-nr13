@@ -134,6 +134,26 @@ html{scroll-behavior:smooth}
 .pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}
 .pager a{font-family:var(--f-display);font-weight:600;font-size:16px;text-decoration:none;color:var(--accent)}
 .card.hl{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.b.disp{background:transparent;color:var(--muted);border:1px dashed var(--muted)}
+.tile.ki{border-color:var(--accent);background:linear-gradient(160deg,#1d1809 0%,var(--panel) 70%)}
+.tile.ki .tm{color:var(--accent)}
+.ki-intro{display:grid;gap:10px;max-width:72ch}
+.ki-intro p{color:var(--muted)}
+.ki-intro p b{color:var(--ink)}
+.svc{display:grid;gap:12px;align-content:start;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:18px 16px;min-width:0}
+.svc h3{font-size:24px;line-height:1.1}
+.svc>p{color:var(--muted);font-size:15px}
+.svc ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.svc li .nm{display:grid;gap:2px;min-width:0}
+.svc li .nm b{font-weight:600;font-size:16px}
+.svc li .nm a{font-size:13px;color:var(--muted);text-decoration:none}
+.svc li .nm a:hover{color:var(--accent)}
+.svc li .act{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.svc li .nolink{font-family:var(--f-display);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.svc .cta.go{font-size:14px;padding:6px 12px}
+.svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:14px}
+@media (max-width:480px){.svc li{grid-template-columns:1fr}.svc li .act{justify-content:flex-start}}
 nav.kits a[aria-current="page"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 </style>
 </head><body>
@@ -143,7 +163,7 @@ nav.kits a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)
   <div class="plate">
     <span class="label">Material de apoio · Vitor Mendes · Cerrado Mechanic Engenharia</span>
     <h1>Guia de Equipamentos NR-13</h1>
-    <p class="sub">Os equipamentos, peças e instrumentos que eu uso nas inspeções de compressores, caldeiras e vasos de pressão, separados em 7 grupos. Toque em um grupo para ver o que é cada item, para que serve, e abrir o produto.</p>
+    <p class="sub">Os equipamentos, peças e instrumentos que eu uso nas inspeções de compressores, caldeiras e vasos de pressão, separados em 7 grupos, e um kit inicial por tipo de serviço para quem está começando. Toque em um grupo para ver o que é cada item, para que serve, e abrir o produto.</p>
     <p class="sub">Não é uma loja: eu não vendo nenhum destes itens. A compra é feita direto no Mercado Livre ou no AliExpress.</p>
     
   </div>
@@ -251,16 +271,28 @@ it:[
 it:[
 ["Manômetro digital Fande DR3710 · 0–40 MPa","Inox · 0,1% FE (anúncio)","Manômetro digital com retroiluminação e registro de pico.","Ler a pressão de abertura da PSV e acompanhar testes de pressão.","499,99",["campo"],"Sem certificado de calibração informado.","https://s.click.aliexpress.com/e/_c4KhGwM3","Em “Pressure Range”, selecione 0-40Mpa. Em “Color”, escolha a rosca (ex.: NPT1-4, G1-2, M20-1.5). Cuidado: existe também 0-4Mpa."],
 ["Manômetro digital Fande DR3710 · 0–60 MPa","Inox · 0,1% FE (anúncio)","O mesmo manômetro, em faixa maior.","Ensaios de PSV e testes em pressões mais altas.","543,70",["campo"],"Sem certificado de calibração informado.","https://s.click.aliexpress.com/e/_c4KhGwM3","Em “Pressure Range”, selecione 0-60Mpa e, em “Color”, a rosca."],
-["Câmera termográfica MILESEEY TR20 Pro","320 × 240 · 50 Hz · vídeo","Câmera térmica portátil.","Achar pontos quentes, isolamento falho e vazamentos em caldeiras, painéis e linhas de vapor.","1.691,03",["ja","campo"],"","https://s.click.aliexpress.com/e/_c3U0BYER","No anúncio, selecione a opção “TR20 PRO”."]]}
+["Câmera termográfica MILESEEY TR20 Pro","320 × 240 · 50 Hz · vídeo","Câmera térmica portátil.","Achar pontos quentes, isolamento falho e vazamentos em caldeiras, painéis e linhas de vapor.","1.691,03",["ja","campo"],"","https://s.click.aliexpress.com/e/_c3U0BYER","No anúncio, selecione a opção “TR20 PRO”."],
+["Boroscópio · câmera de inspeção","Sem link de compra","Câmera pequena na ponta de um cabo flexível, com tela própria ou ligada ao celular.","Fazer a inspeção interna de vasos, reservatórios e tubulações pelas aberturas, sem desmontar.","",["campo"],"",""],
+["Durômetro portátil · dispensável","Sem link de compra","Instrumento que mede a dureza do metal.","Verificar a dureza do material quando a inspeção pedir. Não é necessário para começar.","",["disp"],"",""]]}
 ];
+const SERV=[
+{id:"compressores",t:"Inspeção de compressores e vasos de pressão",d:"Para inspecionar o reservatório: medir espessura, ver o interior pela abertura e conferir dimensões e plaqueta.",
+ it:[["ultrassom","MITECH MT180"],["ultrassom","Sonda P5EE"],["ultrassom","Bloco padrão"],["instrumentacao","Boroscópio"],["ferramentas","Trena"],["ferramentas","Paquímetro"],["ferramentas","Lanterna"],["ferramentas","Maleta"],["instrumentacao","Durômetro"]]},
+{id:"caldeiras",t:"Inspeção de caldeiras",d:"Para a inspeção da caldeira: espessura, inspeção interna, pontos quentes e isolamento.",
+ it:[["ultrassom","MITECH MT180"],["ultrassom","Sonda P5EE"],["ultrassom","Bloco padrão"],["instrumentacao","Boroscópio"],["instrumentacao","Câmera termográfica"],["ferramentas","Trena"],["ferramentas","Lanterna"],["ferramentas","Maleta"],["instrumentacao","Durômetro"]]},
+{id:"psv",t:"Teste de válvulas de segurança (PSV)",d:"Para a bancada com nitrogênio: pressurizar, ler a pressão de abertura e lacrar a válvula ajustada.",
+ it:[["psv","Regulador de nitrogênio"],["psv","Cilindro de nitrogênio"],["instrumentacao","Manômetro digital Fande DR3710 · 0–40"],["instrumentacao","Manômetro digital Fande DR3710 · 0–60"],["psv","Lacre"],["ferramentas","Chave grifo"],["ferramentas","Chave inglesa"],["ferramentas","Maleta"]]},
+{id:"documentacao",t:"Documentação e registros",d:"Para organizar os registros das inspeções.",
+ it:[["documentacao","Livro ata"]]}];
 const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
-const BADGE={ja:["Já comprei","ja"],campo:["Uso em campo","campo"],extra:["Extra · opcional","extra"]};
-const short=n=>n.replace(/ · (extra|opção econômica)$/,"");
+const BADGE={ja:["Já comprei","ja"],campo:["Uso em campo","campo"],extra:["Extra · opcional","extra"],disp:["Dispensável","disp"]};
+const short=n=>n.replace(/ · (extra|opção econômica|dispensável)$/,"");
 document.getElementById("tiles").innerHTML=
+ `<a class="tile ki" href="#kit-inicial"><div class="th"><span class="tn">★</span><span class="tm">Começando na NR-13</span><h2>Kit inicial por serviço</h2></div><ul>${SERV.map(v=>`<li><span>${esc(v.t)}</span><em>${v.it.length} ${v.it.length>1?"itens":"item"}</em></li>`).join("")}</ul><span class="go">Ver o kit inicial →</span></a>`+
  `<a class="tile o" href="#orientacoes"><div class="th"><span class="tn">!</span><span class="tm">Leia primeiro</span><h2>Orientações</h2></div><p>O que eu faço, o que não é responsabilidade minha, como se proteger de golpes e como os botões funcionam.</p><span class="go">Ler orientações →</span></a>`+
- KITS.map(k=>`<a class="tile" href="#${k.id}"><div class="th"><span class="tn">${k.n}</span><span class="tm">${k.mk} · ${k.it.length} ${k.it.length>1?"itens":"item"}</span><h2>${esc(k.t)}</h2></div><ul>${k.it.map(i=>`<li><span>${esc(short(i[0]))}</span>${i[5].includes("extra")?"<em>Extra</em>":(i[5].includes("campo")?"":"<em>Alternativa</em>")}</li>`).join("")}</ul><span class="go">Abrir grupo →</span></a>`).join("")+
+ KITS.map(k=>`<a class="tile" href="#${k.id}"><div class="th"><span class="tn">${k.n}</span><span class="tm">${k.mk} · ${k.it.length} ${k.it.length>1?"itens":"item"}</span><h2>${esc(k.t)}</h2></div><ul>${k.it.map(i=>`<li><span>${esc(short(i[0]))}</span>${i[5].includes("extra")?"<em>Extra</em>":i[5].includes("disp")?"<em>Dispensável</em>":(i[5].includes("campo")?"":"<em>Alternativa</em>")}</li>`).join("")}</ul><span class="go">Abrir grupo →</span></a>`).join("")+
  `<a class="tile sw" href="#software"><div class="th"><span class="tn">+</span><span class="tm">Ferramenta própria</span><h2>Software para o MT180</h2></div><p>O software que eu desenvolvi e uso com o meu medidor ultrassônico.</p><span class="go">Saiba mais →</span></a>`;
-document.getElementById("nav").innerHTML=`<a href="#inicio">← Início</a><a href="#orientacoes" data-k="orientacoes">Orientações</a>`+KITS.map(k=>`<a href="#${k.id}" data-k="${k.id}">${k.n} · ${esc(k.t)}</a>`).join("")+`<a href="#software" data-k="software">Software</a>`;
+document.getElementById("nav").innerHTML=`<a href="#inicio">← Início</a><a href="#kit-inicial" data-k="kit-inicial">Kit inicial</a><a href="#orientacoes" data-k="orientacoes">Orientações</a>`+KITS.map(k=>`<a href="#${k.id}" data-k="${k.id}">${k.n} · ${esc(k.t)}</a>`).join("")+`<a href="#software" data-k="software">Software</a>`;
 function card(k,i,idx){
   const [nome,brand,oque,uso,preco,bs,care,link,pick,nc]=i;
   const ml=/meli\.la/.test(link||"");
@@ -275,20 +307,31 @@ function card(k,i,idx){
     ${btn?`<div class="foot"><p class="ref">${where}</p>${btn}</div>`:`<div class="foot"><p class="ref">Sem link de compra · item de referência</p></div>`}
   </article>`;
 }
-const ORDER=["orientacoes",...KITS.map(k=>k.id),"software"];
-const LABEL=id=>id==="orientacoes"?"Orientações":id==="software"?"Software MT180":(k=>k.n+" · "+k.t)(KITS.find(k=>k.id===id));
+function findIt(g,pre){const k=KITS.find(x=>x.id===g);const i=k&&k.it.find(x=>x[0].startsWith(pre));return i?{k,i}:null}
+function kitInicial(){
+  return `<section class="orient" aria-labelledby="ki-h">
+    <div class="kit-head"><span class="kit-num">★</span><span class="label">Começando na NR-13</span><h2 id="ki-h">Kit inicial por serviço</h2></div>
+    <div class="ki-intro"><p>Para o engenheiro que está começando, ou pensando em começar, na NR-13. Cada kit é para um tipo de serviço: veja o que levar para cada um.</p>
+    <p><b>Todos os itens são indispensáveis</b>, menos o durômetro, que é dispensável para começar. O preço de cada item está no anúncio.</p>
+    <p class="care"><b>Atenção:</b> é uma lista de referência do que eu uso. O escopo de cada inspeção e as exigências aplicáveis definem o que é necessário no seu caso.</p></div>
+    <div class="svcs">${SERV.map(v=>`<div class="svc" id="svc-${v.id}"><h3>${esc(v.t)}</h3><p>${esc(v.d)}</p><ul>${v.it.map(([g,pre])=>{const r=findIt(g,pre);if(!r)return"";const nome=r.i[0],bs=r.i[5],link=r.i[7];const disp=bs.includes("disp");return `<li><span class="nm"><b>${esc(short(nome))}</b><a href="#${r.k.id}">Grupo ${r.k.n} · ${esc(r.k.t)} →</a></span><span class="act">${disp?`<span class="b disp">Dispensável</span>`:""}${link?`<a class="cta go" href="${esc(link)}" target="_blank" rel="noopener sponsored">Abrir o produto</a>`:`<span class="nolink">Sem link de compra</span>`}</span></li>`}).join("")}</ul></div>`).join("")}</div>
+  </section>`;
+}
+const ORDER=["kit-inicial","orientacoes",...KITS.map(k=>k.id),"software"];
+const LABEL=id=>id==="kit-inicial"?"Kit inicial":id==="orientacoes"?"Orientações":id==="software"?"Software MT180":(k=>k.n+" · "+k.t)(KITS.find(k=>k.id===id));
 function show(){
   const h=location.hash.slice(1);
   const home=document.getElementById("v-home"),pg=document.getElementById("v-page"),page=document.getElementById("page");
   const k=KITS.find(x=>x.id===h);
-  if(!k&&h!=="orientacoes"&&h!=="software"){home.hidden=false;pg.hidden=true;window.scrollTo(0,0);return;}
+  if(!k&&h!=="orientacoes"&&h!=="software"&&h!=="kit-inicial"){home.hidden=false;pg.hidden=true;window.scrollTo(0,0);return;}
   let html=`<a class="back" href="#inicio">← Todos os grupos</a>`;
   if(k){
     html+=`<section class="kit" aria-labelledby="h-${k.id}">
       <div class="kit-head"><span class="kit-num">${k.n}</span><span class="label">${k.mk}</span><h2 id="h-${k.id}">${esc(k.t)}</h2></div>
       <div class="kit-intro"><p>${esc(k.d)}</p>${k.list?`<a class="cta ghost" href="${esc(k.list)}" target="_blank" rel="noopener sponsored">Ver o grupo inteiro no Mercado Livre</a>`:""}</div>
       <div class="grid">${k.it.map((x,j)=>card(k,x,j)).join("")}</div></section>`;
-  } else html+=document.getElementById(h==="orientacoes"?"t-orient":"t-soft").innerHTML;
+  } else if(h==="kit-inicial") html+=kitInicial();
+  else html+=document.getElementById(h==="orientacoes"?"t-orient":"t-soft").innerHTML;
   const i=ORDER.indexOf(h),prev=ORDER[i-1],next=ORDER[i+1];
   html+=`<div class="pager">${prev?`<a href="#${prev}">← ${esc(LABEL(prev))}</a>`:`<a href="#inicio">← Início</a>`}${next?`<a href="#${next}">${esc(LABEL(next))} →</a>`:`<a href="#inicio">Início →</a>`}</div>`;
   page.innerHTML=html;
